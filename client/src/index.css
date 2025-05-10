@@ -1,18 +1,19 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(233, 241, 249);
+  background-color: rgb(247, 247, 247);
   display: flex;
   justify-content: center;
-  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  color: rgb(55, 53, 47);
 }
 
 .app {
   background-color: rgb(255, 255, 255);
-  box-shadow: rgba(0,0,0, 0.05) 0 6px 24px, rgba(0,0,0, 0.08) 0 0 0 1px;
-  border-radius: 10px;
-  padding: 10px;
-  width: 800px;
+  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;
+  border-radius: 3px;
+  padding: 24px 16px;
+  width: 850px;
   margin-top: 50px;
 }
 
@@ -23,20 +24,22 @@ body {
 
 .button-container button {
   margin: 0 5px;
-  padding: 5px 10px;
-  font-size: 10px;
-  border-radius: 12px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 3px;
   background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
 }
 
 .edit {
-  border: 1.5px solid rgb(141, 181, 145);
-  color: rgb(141, 181, 145);
-  text-transform: uppercase;
+  border: 1px solid rgba(55, 53, 47, 0.16);
+  color: rgb(55, 53, 47);
+  font-weight: 500;
 }
 
 .edit:hover {
-  background-color: rgb(182, 223, 186);
+  background-color: rgba(55, 53, 47, 0.08);
 }
 
 .edit:active {
@@ -45,13 +48,13 @@ body {
 }
 
 .delete {
-  border: 1.5px solid rgb(255, 175, 163);
-  color: rgb(255, 175, 163);
-  text-transform: uppercase;
+  border: 1px solid rgba(235, 87, 87, 0.5);
+  color: rgb(235, 87, 87);
+  font-weight: 500;
 }
 
 .delete:hover {
-  background-color: rgb(255, 201, 193);
+  background-color: rgba(235, 87, 87, 0.1);
 }
 
 .delete:active {
@@ -60,13 +63,13 @@ body {
 }
 
 .create {
-  border: 1.5px solid rgb(108, 115, 148);
-  color: rgb(108, 115, 148);
-  text-transform: uppercase;
+  border: 1px solid rgba(35, 131, 226, 0.28);
+  color: rgb(35, 131, 226);
+  font-weight: 500;
 }
 
 .create:hover {
-  background-color: rgb(131, 138, 172);
+  background-color: rgba(35, 131, 226, 0.08);
 }
 
 .create:active {
@@ -75,14 +78,14 @@ body {
 }
 
 .signout {
-  border: 1.5px solid rgb(255, 175, 163);
-  background-color: rgb(255, 175, 163) !important;
-  color: rgb(234, 234, 234);
+  border: 1px solid rgba(55, 53, 47, 0.16);
+  background-color: rgba(55, 53, 47, 0.08) !important;
+  color: rgb(55, 53, 47);
 }
 
 .signout:hover {
-  background-color: rgb(175, 94, 94) !important;
-  border: 1.5px solid rgb(175, 94, 94);
+  background-color: rgba(55, 53, 47, 0.12) !important;
+  border: 1px solid rgba(55, 53, 47, 0.16);
 }
 
 .signout:active {
@@ -92,12 +95,18 @@ body {
 }
 
 input {
-  margin: 11px 0;
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: 1.5px solid rgb(230, 232, 236);
+  margin: 8px 0;
+  padding: 10px 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(55, 53, 47, 0.16);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.1s ease-in-out;
 }
 
+input:focus {
+  border-color: rgb(35, 131, 226);
+}
 
 /* List Header */
 
@@ -105,18 +114,28 @@ input {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  border-bottom: rgba(0,0,0,0.05) 1px solid;
+  border-bottom: rgba(55, 53, 47, 0.09) 1px solid;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  align-items: center;
 }
 
 /* List Item */
 
 .list-item {
   width: 100%;
-  margin: 10px 0;
-  border-radius: 10px;
-  box-shadow: rgba(0,0,0,0.08) 0 0 0 1px;
+  margin: 1px 0 8px 0;
+  border-radius: 4px;
+  border: 1px solid transparent;
   display: flex;
   justify-content: space-between;
+  padding: 12px 14px;
+  transition: background 20ms ease-in 0s;
+}
+
+.list-item:hover {
+  background-color: rgba(55, 53, 47, 0.03);
+  cursor: pointer;
 }
 
 .tick {
@@ -124,31 +143,33 @@ input {
 }
 
 .tick path {
-  fill:none;
-  stroke:#000;
-  stroke-miterlimit:10;
-  stroke-width:32px
+  fill: none;
+  stroke: rgb(55, 53, 47);
+  stroke-miterlimit: 10;
+  stroke-width: 25px;
+  transition: stroke 0.1s ease-in-out;
 }
 
 /* Modal */
+
 .overlay {
   position: absolute;
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .modal {
-  width: 500px;
+  width: 550px;
   background-color: rgb(255, 255, 255);
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: rgba(0,0,0,0.05) 0 6px 24px 0, rgba(0,0,0,0.08) 0 0 0 1px;
+  padding: 24px;
+  border-radius: 4px;
+  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 5px 10px, rgba(15, 15, 15, 0.2) 0px 15px 40px;
 }
 
 .modal .form-title-container {
@@ -159,6 +180,17 @@ input {
 .modal .form-title-container button {
   border: none;
   background-color: transparent;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.modal .form-title-container button:hover {
+  background-color: rgba(55, 53, 47, 0.08);
 }
 
 .modal .form-title-container button:active {
@@ -171,10 +203,15 @@ input {
 }
 
 .modal label {
-  font-size: 13px;
+  font-size: 14px;
+  color: rgba(55, 53, 47, 0.65);
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: block;
 }
 
 /* Auth */
+
 .auth-container {
   display: flex;
   justify-content: center;
@@ -182,16 +219,16 @@ input {
 }
 
 .auth-container-box {
-  width: 500px;
-  border-radius: 10px;
+  width: 520px;
+  border-radius: 4px;
   overflow: hidden;
-  box-shadow: rgba(0,0,0,0.05) 0 6px 24px, rgba(0,0,0,0.08) 0 0 0 1px;
+  box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
 }
 
 .auth-container-box form {
   display: flex;
   flex-direction: column;
-  height:350px;
+  height: 350px;
   padding: 20px;
 }
 
@@ -202,33 +239,44 @@ input {
 .auth-options button {
   width: 50%;
   border: none;
-  padding: 10px;
-  color: rgb(35,38, 47);
+  padding: 12px;
+  color: rgb(55, 53, 47);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.auth-options button:hover {
+  background-color: rgba(55, 53, 47, 0.04);
 }
 
 .copyright {
-  font-size: 13px;
+  font-size: 12px;
   margin: 10px;
-  color: rgb(114, 114, 144);
+  color: rgba(55, 53, 47, 0.5);
 }
 
 .user-email {
   float: right;
-  font-size: 13px;
+  font-size: 14px;
   margin: 10px;
-  color: rgb(114, 114, 144);
+  color: rgba(55, 53, 47, 0.65);
+  font-weight: 500;
 }
 
 .outer-bar {
   width: 200px;
-  height: 14px;
-  background-color: rgb(216, 216, 216);
-  border-radius: 7px;
+  height: 8px;
+  background-color: rgba(55, 53, 47, 0.08);
+  border-radius: 4px;
   overflow: hidden;
+  margin: 4px 0;
 }
 
 .inner-bar {
-  height: 14px;
+  height: 8px;
+  transition: width 0.2s ease-in-out;
 }
 
 .task-title {
